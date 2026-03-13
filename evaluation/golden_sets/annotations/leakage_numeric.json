@@ -1,0 +1,10 @@
+{
+  "target": "y",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "leakage",
+      "column": "refund_flag_score"
+    }
+  ]
+}

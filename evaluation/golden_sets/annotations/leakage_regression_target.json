@@ -1,0 +1,14 @@
+{
+  "target": "target",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "leakage",
+      "column": "leak"
+    },
+    {
+      "issue_type": "multicollinearity",
+      "column": "f1~leak"
+    }
+  ]
+}

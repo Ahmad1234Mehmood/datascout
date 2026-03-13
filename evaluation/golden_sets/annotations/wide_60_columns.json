@@ -1,0 +1,18 @@
+{
+  "target": "y",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "missing_values",
+      "column": "c7"
+    },
+    {
+      "issue_type": "outliers",
+      "column": "c33"
+    },
+    {
+      "issue_type": "leakage",
+      "column": "c50"
+    }
+  ]
+}

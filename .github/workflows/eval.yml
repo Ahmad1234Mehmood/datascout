@@ -1,0 +1,43 @@
+name: tests-and-evaluation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Unit + integration tests
+        run: pytest -q
+
+      # Rule-based client (no LLM needed); fails if precision/recall drop or a clean dataset gets a false positive.
+      - name: Golden-set evaluation gate
+        run: python evaluation/run_eval.py --json-out eval.json --markdown-out eval.md
+
+      # Drift detector on real scikit-learn datasets: false-alarm rate and planted-shift recall gates.
+      - name: Drift evaluation gate
+        shell: bash          # bash with pipefail, so a failed gate is not hidden by tee
+        run: python evaluation/run_drift_eval.py | tee drift.md
+
+      - name: Publish evaluation summary
+        if: always()
+        run: |
+          [ -f eval.md ] && cat eval.md >> "$GITHUB_STEP_SUMMARY" || true
+          [ -f drift.md ] && cat drift.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation-report
+          path: |
+            eval.json
+            eval.md

@@ -1,0 +1,10 @@
+{
+  "target": "target",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "multicollinearity",
+      "column": "petal length (cm)~petal width (cm)"
+    }
+  ]
+}

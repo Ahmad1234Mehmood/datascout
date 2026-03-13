@@ -1,0 +1,649 @@
+{
+  "provider": "ollama:qwen2.5:7b",
+  "datasets": 26,
+  "aggregate": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 28,
+    "fp": 0,
+    "fn": 0,
+    "by_issue_type": {
+      "constant_column": {
+        "tp": 2,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "duplicates": {
+        "tp": 2,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "imbalance": {
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "leakage": {
+        "tp": 5,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "missing_values": {
+        "tp": 7,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "multicollinearity": {
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "outliers": {
+        "tp": 5,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      }
+    }
+  },
+  "clean_datasets": 8,
+  "clean_datasets_with_false_positives": [],
+  "pipeline_success_rate": 0.9615,
+  "retried_datasets": 1,
+  "llm_signals": {
+    "fallbacks": 0,
+    "checks_omitted_by_model": 191,
+    "judge_total": 25,
+    "judge_rejections": 1,
+    "grounding_repairs": 2
+  },
+  "total_seconds": 376.0,
+  "per_dataset": {
+    "clean_basic": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 4.8,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "clean_ids_text_dates": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 14.66,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 0,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "clean_naturally_skewed": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 14.24,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 2,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "clean_near_thresholds": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 5.09,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 7,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "clean_regression": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 4.43,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "clean_strong_but_legit_signal": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 4.93,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "collinear_pair": {
+      "tp": [
+        [
+          "multicollinearity",
+          "f1~f1_scaled"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 20.26,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 85.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 1,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "constant_column": {
+      "tp": [
+        [
+          "constant_column",
+          "country"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 9.83,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 7,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "duplicates_heavy": {
+      "tp": [
+        [
+          "duplicates",
+          null
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 16.29,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 85.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 0,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "imbalance_moderate": {
+      "tp": [
+        [
+          "imbalance",
+          "y"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 7.0,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 92.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "imbalance_severe": {
+      "tp": [
+        [
+          "imbalance",
+          "y"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 7.52,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 75.0,
+      "score_after": 75.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "leakage_categorical": {
+      "tp": [
+        [
+          "leakage",
+          "outcome_label"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 10.25,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 75.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 7,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 1,
+      "review_reasons": []
+    },
+    "leakage_numeric": {
+      "tp": [
+        [
+          "leakage",
+          "refund_flag_score"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 18.72,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 75.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 1,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "leakage_regression_target": {
+      "tp": [
+        [
+          "leakage",
+          "leak"
+        ],
+        [
+          "multicollinearity",
+          "f1~leak"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 23.02,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 67.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 1,
+      "judge_total": 2,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "missing_heavy_categorical": {
+      "tp": [
+        [
+          "missing_values",
+          "segment"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 12.4,
+      "retries": 1,
+      "needs_review": true,
+      "failed_checks": 0,
+      "score_before": 75.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 1,
+      "judge_rejections": 1,
+      "grounding_repairs": 0,
+      "review_reasons": [
+        "missing_values:segment: judge disagrees after a retry, verified fix kept (Dropping a column that is only slightly incomplete (under 20% missing) loses information and is inappropriate.)"
+      ]
+    },
+    "missing_low_but_real": {
+      "tp": [
+        [
+          "missing_values",
+          "f3"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 10.04,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 97.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "missing_moderate": {
+      "tp": [
+        [
+          "missing_values",
+          "f2"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 9.39,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 6,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "mixed_A": {
+      "tp": [
+        [
+          "duplicates",
+          null
+        ],
+        [
+          "leakage",
+          "leak"
+        ],
+        [
+          "missing_values",
+          "f2"
+        ],
+        [
+          "outliers",
+          "f3"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 17.86,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 51.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 11,
+      "judge_total": 4,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "mixed_B": {
+      "tp": [
+        [
+          "constant_column",
+          "region"
+        ],
+        [
+          "imbalance",
+          "y"
+        ],
+        [
+          "missing_values",
+          "segment"
+        ],
+        [
+          "multicollinearity",
+          "f4~f4_copy"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 19.34,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 44.0,
+      "score_after": 75.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 9,
+      "judge_total": 3,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "outliers_extreme": {
+      "tp": [
+        [
+          "outliers",
+          "f2"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 12.91,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 3,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "outliers_on_skewed_feature": {
+      "tp": [
+        [
+          "outliers",
+          "income"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 17.27,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 4,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 1,
+      "review_reasons": []
+    },
+    "real_diabetes_untouched": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 12.44,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 2,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "real_iris_known_collinearity": {
+      "tp": [
+        [
+          "multicollinearity",
+          "petal length (cm)~petal width (cm)"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 13.5,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 92.0,
+      "score_after": 92.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 1,
+      "judge_total": 1,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "real_wine_injected": {
+      "tp": [
+        [
+          "missing_values",
+          "alcohol"
+        ],
+        [
+          "outliers",
+          "magnesium"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 18.86,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 84.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 14,
+      "judge_total": 2,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "real_wine_untouched": {
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "seconds": 10.26,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 100.0,
+      "score_after": 100.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 15,
+      "judge_total": 0,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    },
+    "wide_60_columns": {
+      "tp": [
+        [
+          "leakage",
+          "c50"
+        ],
+        [
+          "missing_values",
+          "c7"
+        ],
+        [
+          "outliers",
+          "c33"
+        ]
+      ],
+      "fp": [],
+      "fn": [],
+      "seconds": 60.72,
+      "retries": 0,
+      "needs_review": false,
+      "failed_checks": 0,
+      "score_before": 52.0,
+      "score_after": 97.0,
+      "fallbacks": 0,
+      "checks_omitted_by_model": 58,
+      "judge_total": 3,
+      "judge_rejections": 0,
+      "grounding_repairs": 0,
+      "review_reasons": []
+    }
+  },
+  "gates": {
+    "precision >= 0.9": true,
+    "recall >= 0.9": true,
+    "clean datasets with false positives <= 0": true
+  }
+}

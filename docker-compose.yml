@@ -1,0 +1,31 @@
+# Backend on :8000, Ollama on :11434; the ollama-pull service downloads the model on first start.
+services:
+  backend:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      DATASCOUT_LLM_PROVIDER: ${DATASCOUT_LLM_PROVIDER:-ollama}
+      DATASCOUT_LLM_MODEL: ${DATASCOUT_LLM_MODEL:-qwen2.5:7b}
+      OLLAMA_BASE_URL: http://ollama:11434
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-https://cloud.langfuse.com}
+    volumes: ["datascout_data:/data"]
+    depends_on: [ollama]
+
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: ["ollama_models:/root/.ollama"]
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    depends_on: [ollama]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "${DATASCOUT_LLM_MODEL:-qwen2.5:7b}"]
+    restart: "no"
+
+volumes:
+  ollama_models:
+  datascout_data:

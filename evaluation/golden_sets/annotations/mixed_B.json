@@ -1,0 +1,22 @@
+{
+  "target": "y",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "multicollinearity",
+      "column": "f4~f4_copy"
+    },
+    {
+      "issue_type": "imbalance",
+      "column": "y"
+    },
+    {
+      "issue_type": "constant_column",
+      "column": "region"
+    },
+    {
+      "issue_type": "missing_values",
+      "column": "segment"
+    }
+  ]
+}

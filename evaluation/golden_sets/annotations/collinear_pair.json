@@ -1,0 +1,10 @@
+{
+  "target": "y",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "multicollinearity",
+      "column": "f1~f1_scaled"
+    }
+  ]
+}

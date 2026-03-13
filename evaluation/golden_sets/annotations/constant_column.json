@@ -1,0 +1,10 @@
+{
+  "target": "y",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "constant_column",
+      "column": "country"
+    }
+  ]
+}

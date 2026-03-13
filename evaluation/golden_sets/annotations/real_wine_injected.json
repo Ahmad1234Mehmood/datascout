@@ -1,0 +1,14 @@
+{
+  "target": "target",
+  "task": "predictive modelling",
+  "expected": [
+    {
+      "issue_type": "missing_values",
+      "column": "alcohol"
+    },
+    {
+      "issue_type": "outliers",
+      "column": "magnesium"
+    }
+  ]
+}

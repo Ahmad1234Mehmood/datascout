@@ -1,0 +1,10 @@
+[project]
+name = "datascout"
+version = "0.1.0"
+description = "Autonomous data quality and preparation agent (LangGraph)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
