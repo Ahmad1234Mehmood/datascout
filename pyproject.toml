@@ -2,6 +2,8 @@
 name = "datascout"
 version = "0.1.0"
 description = "Autonomous data quality and preparation agent (LangGraph)"
+readme = "README.md"
+authors = [{ name = "Ahmad Mehmood" }]
 requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
